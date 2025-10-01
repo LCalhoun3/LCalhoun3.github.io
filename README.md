@@ -19,8 +19,8 @@
             color: #FFFDD0;
             padding: 2rem 1rem;
             text-align: center;
-            border-radius: 0 0 2px 2px;
-            box-shadow: 0 4px 16px rgba(108,99,255,0.10);
+            border-radius: 16px 16px 0px 0px;
+            box-shadow: 0px 16px 16px rgba(108,99,255,0.10);
         }
         nav {
             background: #FFD700;
