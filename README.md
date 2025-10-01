@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Cream Background Website Layout</title>
+    <!-- Use Google Fonts for a professional look -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
         body {
-            background: #D1C7C0; /* Updated cream */
+            background: #D1C7C0;
             color: #111;
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
@@ -17,9 +19,8 @@
             color: #FFFDD0;
             padding: 2rem 1rem;
             text-align: center;
-            border-radius: 0 0 32px 32px;
+            border-radius: 0 0 2px 2px;
             box-shadow: 0 4px 16px rgba(108,99,255,0.10);
-            transition: box-shadow 0.3s;
         }
         nav {
             background: #FFD700;
@@ -32,20 +33,29 @@
             color: #111;
             text-decoration: none;
             margin: 0 1rem;
-            font-weight: bold;
+            font-weight: 500;
             padding: 0.5rem 1rem;
             border-radius: 18px;
             transition: background 0.2s, color 0.2s, transform 0.2s;
             display: inline-block;
+            font-family: inherit;
         }
         nav a:hover {
             background: #6C63FF;
             color: #FFFDD0;
             transform: scale(1.08);
         }
+        #pages-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 400px;
+            position: relative;
+        }
         .page {
-            max-width: 800px;
-            margin: 2rem auto;
+            width: 95%;
+            max-width: 700px;
+            margin: 2rem 0;
             background: #fffbe6;
             padding: 2rem;
             border-radius: 32px;
@@ -54,17 +64,26 @@
             transform: translateY(40px) scale(0.98);
             pointer-events: none;
             position: absolute;
-            left: 0; right: 0;
+            left: 50%;
+            top: 0;
+            translate: -50% 0;
             transition: opacity 0.6s, transform 0.6s;
+            font-family: inherit;
+            z-index: 1;
         }
         .page.active {
             opacity: 1;
             transform: translateY(0) scale(1);
             pointer-events: auto;
-            position: static;
+            position: relative;
+            left: 0;
+            top: 0;
+            translate: none;
+            z-index: 2;
         }
         h1, h2 {
             margin-top: 0;
+            font-family: inherit;
         }
         button {
             background: #6C63FF;
@@ -77,6 +96,7 @@
             margin-top: 1rem;
             box-shadow: 0 2px 8px rgba(108,99,255,0.08);
             transition: background 0.2s, transform 0.2s;
+            font-family: inherit;
         }
         button:hover {
             background: #FFD700;
@@ -89,15 +109,22 @@
             text-align: center;
             padding: 1rem;
             margin-top: 2rem;
-            border-radius: 24px 24px 0 0;
-            box-shadow: 0 -2px 8px rgba(108,99,255,0.08);
+            border-radius: 8px 8px 8px 8px;
+            box-shadow: 0 -2px 2px rgba(108,99,255,0.08);
+            font-family: inherit;
+        }
+        @media (max-width: 800px) {
+            .page {
+                width: 98%;
+                padding: 1rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Lorem Ipsum Website</h1>
-        <p>Welcome to your cream-themed layout</p>
+        <p>Where I live stream my crash-outs.</p>
     </header>
     <nav>
         <a href="#" data-page="home">Home</a>
@@ -105,9 +132,9 @@
         <a href="#" data-page="services">Services</a>
         <a href="#" data-page="contact">Contact</a>
     </nav>
-    <div id="pages-container" style="position:relative; min-height:400px;">
+    <div id="pages-container">
         <section class="page active" id="home">
-            <h2>Welcome Home</h2>
+            <h2>Welcome, User</h2>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam eros, a facilisis enim leo nec urna.
             </p>
@@ -136,7 +163,7 @@
         </section>
     </div>
     <footer>
-        &copy; 2024 Cream Layout. All rights reserved.
+        &copy; 2025 Cream Layout. All rights reserved.
     </footer>
     <script>
         // Page transition logic
